@@ -1,0 +1,37 @@
+<div class="container">
+    <h2 class="text-center" style="margin-top: 43px; margin-bottom: 25px;">{{title}}</h2>
+    <form class="w-75 m-auto" method="post" action="/courses/edit/{{course._id}}" enctype="multipart/form-data"
+        style="border: 1px solid rgb(92, 231, 207); border-radius: 5px; padding: 24px; margin-top: 12px;">
+        
+        {{!-- Display current image if available --}}
+    {{#if course.image}}
+    <fieldset>
+        <label for="currentImg" class="form-label text-center w-100 fs-5">Current Image</label>
+        <br>
+        <div class="editImg d-flex justify-content-center align-items-center" style="margin-bottom: 49px;">
+            <img src="{{course.image}}" alt="Course Image" width="250" height="180">
+        </div>
+    </fieldset>
+    {{/if}}
+        <div class="mb-3">
+            <label for="title" class="form-label">Course Title</label>
+            <input type="text" class="form-control" id="title" name="courseTitle" value="{{course.title}}" aria-describedby="nameHelp">
+        </div>
+        <div class="mb-3">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" name="coursePrice" value="{{course.price}}" aria-describedby="nameHelp" step="0.001" min="0" required>
+            
+        </div>
+        <div class="mb-3">
+            <label for="image">Upload New Image</label>
+            <input type="file" class="form-control" id="image" name="image" accept="/image*" aria-describedby="nameHelp" alt="Error loading image" required>
+        </div>
+        <div class="form-floating">
+  <textarea class="form-control" placeholder="Write description about course here" name="courseDesc" id="courseDesc" style="height: 100px">{{course.description}}</textarea>
+  <label for="courseDesc">Description</label>
+</div>
+        <div class="d-flex justify-content-center mt-5">
+    <button class="btn btn-info px-4 py-2">Update Course</button>
+</div>
+    </form>
+</div>
