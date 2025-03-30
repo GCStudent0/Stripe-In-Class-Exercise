@@ -3,7 +3,10 @@ const mongoose = require("mongoose");
 const courseSchemaObj = {
     title: { type: String, required: true },
     description: { type: String, required: true },
-    price: { type: Number, required: true },
+    
+    //Step 6:
+    
+
     // createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     image: { type: String, required: true },
 };

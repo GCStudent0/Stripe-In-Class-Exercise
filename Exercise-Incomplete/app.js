@@ -7,8 +7,11 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var courseRouter = require('./routes/courseRoutes');
 var usersRouter = require('./routes/users');
-var paymentsRouter = require('./routes/paymentRoutes');
-var ordersRouter = require('./routes/orderRoutes');
+
+//Step 4
+
+
+
 var hbs = require("hbs");
 
 var app = express();
@@ -48,8 +51,10 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/courses', courseRouter);
-app.use('/payments', paymentsRouter);
-app.use('/orders', ordersRouter);
+
+//Step 5
+
+
 
 // Connect to mongoose
 mongoose.connect(configs.ConnectionStrings.MongoDB)
