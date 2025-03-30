@@ -6,22 +6,22 @@ Step by Step Instructions of Exercise:
 
 3.  Create a .env file in root of directory and add the test keys, a database connection string, and our base url:
 
-    CONNECTION*STRING_MONGODB = mongodb+srv://yourdbstring
-    STRIPE_PUBLISHABLE_KEY = pk_test*yourpublishkey
-    STRIPE*SECRET_KEY = sk_test*yoursecretkey
-    BASE_URL=http://localhost:3000
+        CONNECTION*STRING_MONGODB = mongodb+srv://yourdbstringz
+        STRIPE_PUBLISHABLE_KEY = pk_test*yourpublishkey
+        STRIPE*SECRET_KEY = sk_test*yoursecretkey
+        BASE_URL=http://localhost:3000
 
 4.  At the top of app.js add the routes we will be using for payment:
 
-    var paymentsRouter = require('./routes/paymentRoutes');
-    var ordersRouter = require('./routes/orderRoutes');
+        var paymentsRouter = require('./routes/paymentRoutes');
+        var ordersRouter = require('./routes/orderRoutes');
 
 5.  Around line 55 of app.js add the route handlers as well:
-    app.use('/payments', paymentsRouter);
-    app.use('/orders', ordersRouter);
+        app.use('/payments', paymentsRouter);
+        app.use('/orders', ordersRouter);
 
 6.  Next we will add a price to our Course model in Models/Course so we can let Stripe know what to charge based on the Course.
-    price: { type: Number, required: true },
+        price: { type: Number, required: true },
 
 7.  Going to public/javascripts/stripe lets add the script we will use to grab the selected course for a single transaction:
 
